@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import PersonalForm from "./components/PersonalForm";
+import { PersonalProvider } from "./components/context/PersonalContext";
+import { Box } from "@mui/material";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<PersonalProvider>
+			<Box
+				display="flex"
+				justifyContent="center"
+				sx={{
+					width: "75%",
+				}}
+			>
+				<PersonalForm />
+			</Box>
+		</PersonalProvider>
+	);
 }
 
 export default App;
